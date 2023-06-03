@@ -11,7 +11,7 @@
 \end{frame}
 ```
 
-### Give horizontal linebreak for nested command and `if else` life control flow.
+### Give horizontal linebreak for nested command and `if else` like control flow.
 
 ```latex
 Set $D$ is called the \only<1>{\line(1,0){50}}
