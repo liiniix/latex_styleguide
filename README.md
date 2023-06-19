@@ -1,5 +1,5 @@
 
-### Use proper indentation.
+1. ### Use proper indentation.
 
 ```latex
 \begin{frame}[t]{Functions} \vspace{4pt}
@@ -11,7 +11,7 @@
 \end{frame}
 ```
 
-### Give horizontal linebreak for nested command and `if else` like control flow.
+2. ### Give horizontal linebreak for nested command and `if else` like control flow.
 
 ```latex
 Set $D$ is called the \only<1>{\line(1,0){50}}
@@ -27,7 +27,7 @@ Set $E$ is called the \only<1>{\line(1,0){50}}
                       \, of the function.
 ```
 
-### Keep column in different indented block so that different columns can be differentiated
+3. ### Keep column in different indented block so that different columns can be differentiated
 
 ```latex
 \begin{columns}[onlytextwidth]
@@ -55,8 +55,58 @@ Set $E$ is called the \only<1>{\line(1,0){50}}
 \end{columns}
 ```
 
-### Do not use extension of filename to reduce characers taken and increase readability.
+4. ### Do not use extension of filename to reduce characers taken and increase readability.
 
 ```latex
 \includegraphics[scale=.19]{absolute}
+```
+
+5. ### Keep images in separate directory like `Images`. If we use `\graphicspath{{./Images/}}`, we need not to specify full image address in `\includegraphics`.
+
+```latex
+\graphicspath{{./Images/}}
+\includegraphics[scale=.18]{WordRepresentationOfWord2Vec}
+```
+
+6. ### For bibliography, maintain bibliography database file
+
+```latex
+\bibliography{citations.bib}
+\bibliographystyle{plain}
+```
+
+7. ### Use proper identifiable, readable, recallable name for citation entry
+
+```latex
+@inproceedings{MultiplexHeterogeneousGraphConvolutionalNetwork,
+  title={Multiplex Heterogeneous Graph Convolutional Network},
+  author={Yu, Pengyang and Fu, Chaofan and Yu, Yanwei and Huang, Chao and Zhao, Zhongying and Dong, Junyu},
+  booktitle={Proceedings of the 28th ACM SIGKDD Conference on Knowledge Discovery and Data Mining},
+  pages={2377--2387},
+  year={2022}
+} 
+```
+
+8. s### We can structure a latex project like following way. Main project is segregated in different parts. The parts are then included in `main.tex` file.
+
+```
+.
+├───Images
+│   ├───image1.png
+│   └───image2.png
+├───main.tex
+├───introduction.tex
+├───body.tex
+└───conclusion.tex
+```
+
+`main.tex:`
+```latex
+...
+\graphicspath{{./Images/}}
+...
+\include{introduction}
+\include{body}
+\include{conclusion}
+...
 ```
